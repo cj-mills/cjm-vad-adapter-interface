@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cjm-vad-adapter-interface"
+dynamic = ["version"]
+description = "Typed voice-activity-detection task-adapter interface — VADAdapter ABC + GenericVADAdapter (cache/persist bookends around a pure-compute tool), the VADToolProtocol, and VAD persistence helpers. The VADResult data noun lives in cjm-vad-adapter-interface."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Apache-2.0"}
+authors = [{name = "Christian J. Mills", email = "9126128+cj-mills@users.noreply.github.com"}]
+keywords = ['nbdev']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/cj-mills/cjm-vad-adapter-interface"
+Documentation = "https://cj-mills.github.io/cjm-vad-adapter-interface/"
+
+[project.entry-points.nbdev]
+cjm_vad_adapter_interface = "cjm_vad_adapter_interface._modidx:d"
+
+[tool.setuptools.dynamic]
+version = {attr = "cjm_vad_adapter_interface.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["cjm_vad_adapter_interface"]
+
+[tool.nbdev]
