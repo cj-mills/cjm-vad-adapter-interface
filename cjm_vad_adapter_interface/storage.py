@@ -7,7 +7,7 @@ Docs: https://cj-mills.github.io/cjm-vad-adapter-interfacestorage.html.md"""
 # %% auto #0
 __all__ = ['VADRow', 'VADStorage']
 
-# %% ../nbs/storage.ipynb #29ad59c3
+# %% ../nbs/storage.ipynb #80a9ba21
 import json
 import logging
 import sqlite3
@@ -22,7 +22,7 @@ from cjm_plugin_system.utils.hashing import hash_file
 from cjm_plugin_system.core.journal_store import SubstrateEventType
 from cjm_plugin_system.core.wire import record_account
 
-# %% ../nbs/storage.ipynb #391db96d
+# %% ../nbs/storage.ipynb #f4d22588
 @dataclass
 class VADRow:
     """A single row from the vad_results table."""
@@ -33,7 +33,7 @@ class VADRow:
     metadata: Optional[Dict[str, Any]] = None       # VAD metadata
     created_at: Optional[float] = None               # Unix timestamp
 
-# %% ../nbs/storage.ipynb #539e279b
+# %% ../nbs/storage.ipynb #b11a2421
 class VADStorage:
     """Standardized SQLite storage for voice-activity-detection results."""
 

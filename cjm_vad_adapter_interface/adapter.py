@@ -7,7 +7,7 @@ Docs: https://cj-mills.github.io/cjm-vad-adapter-interfaceadapter.html.md"""
 # %% auto #0
 __all__ = ['VADToolProtocol', 'VADAdapter']
 
-# %% ../nbs/adapter.ipynb #23a7ceed
+# %% ../nbs/adapter.ipynb #a7b39b97
 from abc import abstractmethod
 from pathlib import Path
 from typing import Any, ClassVar, Dict, Protocol, Union, runtime_checkable
@@ -19,7 +19,7 @@ from cjm_plugin_system.core.adapter import TaskAdapter
 # this adapter machinery.
 from cjm_capability_primitives.vad import VADResult
 
-# %% ../nbs/adapter.ipynb #b620f982
+# %% ../nbs/adapter.ipynb #edacb217
 @runtime_checkable
 class VADToolProtocol(Protocol):
     """Structural contract for voice-activity-detection tool capabilities
@@ -32,7 +32,7 @@ class VADToolProtocol(Protocol):
     def detect_speech(self, audio: Union[str, Path], **kwargs) -> VADResult: ...
     def get_current_config(self) -> Dict[str, Any]: ...
 
-# %% ../nbs/adapter.ipynb #bee574cd
+# %% ../nbs/adapter.ipynb #9c358302
 class VADAdapter(TaskAdapter):
     """Typed voice-activity-detection task adapter: model-ready audio in,
     `VADResult` out.

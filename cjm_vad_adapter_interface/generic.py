@@ -7,7 +7,7 @@ Docs: https://cj-mills.github.io/cjm-vad-adapter-interfacegeneric.html.md"""
 # %% auto #0
 __all__ = ['GenericVADAdapter']
 
-# %% ../nbs/generic.ipynb #8df20d7c
+# %% ../nbs/generic.ipynb #81d6c059
 import os
 from pathlib import Path
 from typing import Union
@@ -19,7 +19,7 @@ from cjm_capability_primitives.vad import VADResult, TimeRange
 from .adapter import VADAdapter
 from .storage import VADStorage
 
-# %% ../nbs/generic.ipynb #7aec19a6
+# %% ../nbs/generic.ipynb #a11b0d2b
 class GenericVADAdapter(VADAdapter):
     """Generic VAD adapter: cache-check -> pure-compute tool -> persist.
 
