@@ -33,16 +33,16 @@ class GenericVADAdapter(VADAdapter):
     `config_hash` reuses `hash_dict_canonical(get_current_config())` (the SAME
     canonical hash the fused-era plugin used). `force` rides
     `CallEnvelope.control` (not a task kwarg, keeping `detect_speech(audio)`
-    pure). Storage lives at `<PLUGIN_DATA_DIR>/vad.db`; the substrate injects
-    the per-capability `PLUGIN_DATA_DIR` at spawn, so the adapter neither
+    pure). Storage lives at `<CAPABILITY_DATA_DIR>/vad.db`; the substrate injects
+    the per-capability `CAPABILITY_DATA_DIR` at spawn, so the adapter neither
     hard-codes a path nor asks the tool for one.
     """
 
     def _get_storage(self) -> VADStorage:
         """Lazily open the per-capability cache DB under the substrate-injected
-        PLUGIN_DATA_DIR (created at worker spawn)."""
+        CAPABILITY_DATA_DIR (created at worker spawn)."""
         if getattr(self, "_storage", None) is None:
-            db_path = os.path.join(os.environ["PLUGIN_DATA_DIR"], "vad.db")
+            db_path = os.path.join(os.environ["CAPABILITY_DATA_DIR"], "vad.db")
             self._storage = VADStorage(db_path)
         return self._storage
 
