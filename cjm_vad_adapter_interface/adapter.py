@@ -12,7 +12,7 @@ from abc import abstractmethod
 from pathlib import Path
 from typing import Any, ClassVar, Dict, Protocol, Union, runtime_checkable
 
-from cjm_plugin_system.core.adapter import TaskAdapter
+from cjm_substrate.core.adapter import TaskAdapter
 
 # Canonical home (stage 8 / PILLAR 1c): the data noun lives in
 # cjm-capability-primitives, so the pure-compute tool depends on it, never on
