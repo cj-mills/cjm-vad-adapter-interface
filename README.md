@@ -93,7 +93,7 @@ class VADAdapter:
     Native-surface model (stage 8 / PILLAR 1c): the TOOL is pure compute; the
     ADAPTER owns the cache + persistence bookends (see `GenericVADAdapter`) +
     the per-call `force` control. Storage resolves from the substrate-injected
-    `PLUGIN_DATA_DIR`; `db_path` is not on the tool protocol.
+    `CAPABILITY_DATA_DIR`; `db_path` is not on the tool protocol.
     
     Implementations run in-worker beside their tool capability and are
     constructed with the bound tool instance: `AdapterClass(tool)` (mirrors
@@ -146,8 +146,8 @@ class GenericVADAdapter(VADAdapter):
     `config_hash` reuses `hash_dict_canonical(get_current_config())` (the SAME
     canonical hash the fused-era plugin used). `force` rides
     `CallEnvelope.control` (not a task kwarg, keeping `detect_speech(audio)`
-    pure). Storage lives at `<PLUGIN_DATA_DIR>/vad.db`; the substrate injects
-    the per-capability `PLUGIN_DATA_DIR` at spawn, so the adapter neither
+    pure). Storage lives at `<CAPABILITY_DATA_DIR>/vad.db`; the substrate injects
+    the per-capability `CAPABILITY_DATA_DIR` at spawn, so the adapter neither
     hard-codes a path nor asks the tool for one.
     """
     
