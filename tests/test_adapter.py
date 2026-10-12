@@ -5,7 +5,6 @@ migrated tool surface (detect_speech + get_current_config) and rejecting a
 fused-era execute tool."""
 
 import pytest
-
 from cjm_capability_primitives.vad import TimeRange, VADResult
 from cjm_vad_adapter_interface.adapter import VADAdapter, VADToolProtocol
 
